@@ -1,0 +1,31 @@
+<nav class="transparent-container d-flex justify-content-center p-2 position-relative">
+  <div class="content-wrapper position-relative px-3 w-75 d-flex align-items-center">
+    <div class="right-content-wrapper w-25 d-flex align-items-center">
+      <%= image_tag "weather-logo.png", class: "logo-icon me-3",  alt: "Weather Icon" %>
+      <h1>SkyCast</h1>
+    </div>
+    <button class="navbar-toggler d-none position-absolute top-0 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%= image_tag "menu.png", class: "menu-icon me-3",  alt: "Menu Icon" %>
+    </button>
+    <ul class="nav links-wrapper fs-4 w-50 justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link text-light active" aria-current="page" href="#">Forecast</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Weather Logs</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="collapse w-100 position-fixed" id="navbarToggleExternalContent">
+  <div class="transparent-container fs-6 p-4" style="border-radius: 0px;">
+    <ul class="nav links-wrapper flex-column fs-5 justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link text-light active" aria-current="page" href="#">Forecast</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Weather Logs</a>
+      </li>
+    </ul>
+  </div>
+</div>

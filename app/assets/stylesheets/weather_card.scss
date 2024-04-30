@@ -1,0 +1,22 @@
+.weather-content-card {
+
+  .weather-additional-info {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .weather-content-card {
+  
+    .left-wrapper-section {
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+      width: 100% !important;
+    }
+
+    .right-wrapper-section {
+      display: none;
+    }
+  }
+}

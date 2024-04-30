@@ -1,2 +1,25 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import 'header_section';
+@import 'weather_card';
+
+:root {
+  --bg-color: #ffffff;
+}
+
+body {
+  height: 100vh;
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--bg-color);
+  
+  .transparent-container {
+    background: rgba(206, 205, 205, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" type="image/svg+xml" href="weather-icon.png">
     <title>Skycast</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -11,6 +12,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid p-0 h-100 d-flex flex-column">
+      <%= render 'layouts/header'%>
+      <div class="main-content-wrapper flex-fill d-flex justify-content-center p-3">
+        <%= yield %>
+      <div>
+    </div>
   </body>
 </html>
