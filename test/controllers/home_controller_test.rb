@@ -16,7 +16,17 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
   test '#create should be able to create location and weather records after a successful API request' do
     assert_difference 'Location.count' do
-      post home_index_path, params: {search: @search_input}
+      assert_difference 'Weather.count' do
+        post home_index_path, params: {search: @search_input}
+      end
+    end
+  end
+
+    test '#create should not be able to create location and weather records if there is no search input' do
+    assert_difference 'Location.count' do
+      assert_difference 'Weather.count' do
+        post home_index_path, params: {search: nil}
+      end
     end
   end
 
@@ -46,7 +56,7 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
         "wind" => {"speed" => 4.12, "deg" => 110},
         "clouds" => {"all" => 20},
         "dt" => "2024-05-02 16:09:24 UTC",
-        "sys" => {"type" => 2, "id" => 2008256, "country" => "PH", "sunrise" => "2024-05-02 21:32:30 UTC", "sunset" => "2024-05-03 10:13:16 UTC"},
+        "sys" => {"type" => 2, "id" => 2008256, "country" => "PH", "sunrise" => DateTime.parse("2024-05-02 16:09:24 UTC"), "sunset" => DateTime.parse("2024-05-03 10:13:16 UTC")},
         "timezone" => 28800,
         "name" => "Manila",
         "cod" => 200
