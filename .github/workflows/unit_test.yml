@@ -1,0 +1,46 @@
+name: Unit Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: admin
+      redis:
+        image: redis
+        ports: ['6379:6379']
+        options: --entrypoint redis-server
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - name: Install Yarn Dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - name: Build and run tests
+        env:
+          DATABASE_URL: postgres://postgres:admin@localhost:5432/test
+          RAILS_ENV: test
+          OPEN_WEATHER_KEY: string
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:prepare
+          bundle exec rails test --verbose
