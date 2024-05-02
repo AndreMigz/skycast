@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module Skycast
   class Application < Rails::Application
+
+    config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'local_env.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+        ENV[key.to_s] = value
+      end if File.exist?(env_file)
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -23,5 +30,6 @@ module Skycast
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
