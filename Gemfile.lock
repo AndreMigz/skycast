@@ -135,6 +135,8 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.22.3)
+    mocha (2.2.0)
+      ruby2_keywords (>= 0.0.5)
     msgpack (1.7.2)
     multipart-post (2.4.0)
     mutex_m (0.2.0)
@@ -222,6 +224,7 @@ GEM
     reline (0.5.3)
       io-console (~> 0.5)
     rexml (3.2.6)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.20.1)
       base64 (~> 0.2)
@@ -276,6 +279,7 @@ DEPENDENCIES
   debug
   jbuilder
   jsbundling-rails
+  mocha
   open-weather-ruby-client
   pg (~> 1.1)
   puma (>= 5.0)

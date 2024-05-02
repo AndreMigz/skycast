@@ -1,11 +1,11 @@
 <div class="weather-content-card transparent-container mt-3 row container p-3" style="height: fit-content">
   <div class = "left-wrapper-section container col-4 p-2 d-flex flex-column">
-    <div class="search-wrapper d-flex py-3" style="height:80px;">
-      <input type="text" class="form-control px-3 fs-5" placeholder="Search for location" aria-label="Location">
+    <%= form_with(url: home_index_path, method: "post", local: false, class: "search-wrapper d-flex py-3", style:"height:80px;") do |form| %>
+      <%= form.text_field :search, class: "form-control px-3 fs-5", placeholder: "Search for location", aria: { label: "Location" } %>
       <button class="btn bg-white d-flex ms-3 align-items-center justify-content-center" type="submit">
-        <%= image_tag "search.png", class: "search-icon", style:"max-width:20px; max-height:20px;",  alt: "Search Icon" %>
+        <%= image_tag "search.png", class: "search-icon", style: "max-width:20px; max-height:20px;", alt: "Search Icon" %>
       </button>
-    </div>
+    <% end %>
     <div class="weather-info-wrapper d-flex flex-column align-items-center">
       <%= image_tag "mist.png", class: "weather-icon", style:"max-width:150px; max-height:150px;",  alt: "Weather Icon" %>
       <p class="weather-icon temperature fw-light mb-0" style="font-size:5rem;">35°C</p>

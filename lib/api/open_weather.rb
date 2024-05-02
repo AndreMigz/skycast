@@ -3,10 +3,14 @@ module Api::OpenWeather
   extend self
 
   def current_weather(location)
-    return { error: "Location required" } if location.nil?
+    return { error: "Location required" } if location.blank?
 
     client = intialize_client
-    client.current_weather(city: location)
+    begin
+      client.current_weather(city: location)
+    rescue Faraday::ResourceNotFound
+      {"cod"=>404, "message"=>"Weather data not found for the specified location" }
+    end
   end
 
   private
