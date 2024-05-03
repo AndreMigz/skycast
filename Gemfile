@@ -71,3 +71,4 @@ group :test do
 end
 
 gem 'open-weather-ruby-client'
+gem 'kaminari'

@@ -1,6 +1,6 @@
 class WeathersController < ApplicationController
 
   def index
-    @weathers = Weather.all.limit(5)
+    @weathers = Weather.page(params[:page]).per(5)
   end
 end
