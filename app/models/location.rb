@@ -3,5 +3,5 @@ class Location < ApplicationRecord
   validates :longitude, presence: :true
   validates :latitude, presence: :true
 
-  has_many :weather_forecast, class_name: "Weather", foreign_key: "location_id"
+  has_many :weather_forecast, class_name: "Weather"
 end
