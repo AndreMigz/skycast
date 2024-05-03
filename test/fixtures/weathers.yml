@@ -3,7 +3,7 @@
 one:
   location: one
   main: Clouds
-  description: 
+  description: "MyString"
   temperature: 9.99
   wind_speed: 3.5
   humidity: 65.0
