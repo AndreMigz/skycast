@@ -1,0 +1,24 @@
+<%= turbo_frame_tag 'weather_main_info' do %>
+  <% if location.present? %>
+    <div class="weather-info-wrapper d-flex flex-column align-items-center">
+      <%= image_tag weather_icon(weather.main), class: "weather-icon", style:"max-width:150px; max-height:150px;",  alt: "Weather Icon" %>
+      <p class="weather-icon temperature fw-light mb-0" style="font-size:5rem;"><%= weather.temperature %>°C</p>
+      <p class="weather-conditon text-capitalize fs-4"><%= weather.description %></p>
+    </div>
+    <hr class="mx-3">
+    <div class="forecast-date-section mt-3 text-center">
+      <p class="date-info fs-6 lh-lg">
+        <%= weather.created_at.strftime("%e-%b-%Y") %><br>
+        <%= weather.created_at.strftime("%A, %I:%M %p") %> (UTC)
+      </p>
+    </div>
+    <div class="forecast-location-section text-center mb-4">
+      <h1 class="location fw-light"><%= location.name %></h1>
+    </div>
+  <% else %>
+    <div class="weather-info-wrapper mt-5 d-flex flex-column align-items-center">
+      <%= image_tag 'no_result.png', class: "weather-icon", style:"max-width:100px; max-height:100px;",  alt: "Weather Icon" %>
+      <p class="weather-icon temperature fs-4 fw-light mb-0">Location not Found</p>
+    </div>
+  <% end %>
+<% end %>

@@ -2,7 +2,8 @@
 
 one:
   location: one
-  main: Cloudy
+  main: Clouds
+  description: 
   temperature: 9.99
   wind_speed: 3.5
   humidity: 65.0
@@ -17,7 +18,8 @@ one:
 
 two:
   location: two
-  main: Sunny
+  main: Clear
+  description: clear sky
   temperature: 20.55
   wind_speed: 5.2
   humidity: 72.0

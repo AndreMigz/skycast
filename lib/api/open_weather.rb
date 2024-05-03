@@ -7,7 +7,7 @@ module Api::OpenWeather
 
     client = intialize_client
     begin
-      client.current_weather(city: location)
+      client.current_weather(city: location, units: 'metric')
     rescue Faraday::ResourceNotFound
       {"cod"=>404, "message"=>"Weather data not found for the specified location" }
     end

@@ -6,26 +6,11 @@
         <%= image_tag "search.png", class: "search-icon", style: "max-width:20px; max-height:20px;", alt: "Search Icon" %>
       </button>
     <% end %>
-    <div class="weather-info-wrapper d-flex flex-column align-items-center">
-      <%= image_tag "mist.png", class: "weather-icon", style:"max-width:150px; max-height:150px;",  alt: "Weather Icon" %>
-      <p class="weather-icon temperature fw-light mb-0" style="font-size:5rem;">35°C</p>
-      <p class="weather-conditon fs-4">Mostly Cloudy</p>
-    </div>
-    <hr class="mx-3">
-    <div class="forecast-date-section mt-3 text-center">
-      <p class="date-info fs-6 lh-lg">
-        2-May-2024<br>
-        Thursday, 12:44 PM<br>
-        Day
-      </p>
-    </div>
-    <div class="forecast-location-section text-center mb-4">
-      <h1 class="location fw-light">Paris, France</h1>
-    </div>
+    <%= render partial: "home/weather_main_info", locals: {weather: @weather, location: @location} %>
   </div>
   <div class="right-wrapper-section container position-relative col-8 p-3">
     <h3 class="fw-light">Today's Forecast</h3>
-    <%= render partial: "weather_additional_info" %>
+    <%= render partial: "home/weather_additional_info", locals: {weather: @weather} %>
     <h6 class="position-absolute bottom-0 fw-light">Data Powered By OpenWeather.org</h6>
   </div>
 </div>

@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_02_175042) do
   create_table "weathers", force: :cascade do |t|
     t.bigint "location_id", null: false
     t.string "main"
+    t.string "description"
     t.decimal "temperature", precision: 5, scale: 2
     t.decimal "wind_speed", precision: 5, scale: 2
     t.decimal "humidity", precision: 5, scale: 2

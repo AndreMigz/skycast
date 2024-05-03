@@ -4,13 +4,14 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
 
   setup do
     # Stub API request to avoid sending API request while running tests
+    @mock_response = mock_response
     client = Api::OpenWeather
-    client.stubs(:current_weather).returns(mock_response)
+    client.stubs(:current_weather).returns(@mock_response)
     @search_input = "Manila"
   end
 
   test '#index should be able to access the root_path' do
-    get home_index_path
+    get root_path
     assert_response :success
   end
 

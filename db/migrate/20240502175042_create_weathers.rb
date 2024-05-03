@@ -3,6 +3,7 @@ class CreateWeathers < ActiveRecord::Migration[7.1]
     create_table :weathers do |t|
       t.references :location, null: false, foreign_key: true
       t.string :main, null: :false
+      t.string :description
       t.decimal :temperature, precision: 5, scale: 2
       t.decimal :wind_speed, precision: 5, scale: 2
       t.decimal :humidity, precision: 5, scale: 2
