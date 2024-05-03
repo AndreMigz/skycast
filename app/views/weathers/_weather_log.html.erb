@@ -1,0 +1,16 @@
+<div class="transparent-container mb-4 d-flex flex-wrap align-items-center container py-1 px-4">
+  <p class="location-name my-0 fw-light fs-4 flex-fill"><%= weather.location.name %></p>
+  <%= image_tag 'mist.png', class: "weather-icon", style:"max-width:70px; max-height:70px;",  alt: "Weather Icon" %>
+  <p class="description my-0 fw-light fs-5 ms-5 text-capitalize"><%= weather.description %></p>
+  <div class="temperature ms-5 d-flex align-items-center">
+    <%= image_tag 'up-arrow.png', class: "weather-icon", style:"max-width:40px; max-height:40px;",  alt: "Up Arrow Icon" %>
+    <p class="my-0 fs-5 fw-light"><%= weather.max_temperature %>°C</p>
+  </div>
+  <div class="temperature ms-5  d-flex align-items-center">
+    <%= image_tag 'down-arrow.png', class: "weather-icon", style:"max-width:40px; max-height:40px;",  alt: "Down Arrow Icon" %>
+    <p class="my-0 fs-5 fw-light"><%= weather.min_temperature %>°C</p>
+  </div>
+  <button class="btn border border-ligh p-2 d-flex ms-4 align-items-center justify-content-center" data-action="delete" data-toggle="modal" data-target="#deleteMemberModal">
+    <%= image_tag "delete.png", class: "delete-icon", style: "max-width:30px; max-height:30px;", alt: "Search Icon" %>
+  </button>
+</div>

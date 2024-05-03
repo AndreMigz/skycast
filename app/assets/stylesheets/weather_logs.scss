@@ -1,0 +1,33 @@
+@include media-breakpoint-down(md) {
+  .weather-logs-container {
+    .transparent-container {
+      padding-right: 0.5rem !important;
+      padding-left: 0.5rem !important;
+      
+      p:not(:first-of-type) {
+        margin-left: 1rem !important;
+      }
+      .location-name {
+        font-size: 1rem !important;
+      }
+    
+      .weather-icon {
+        max-width: 30px !important;
+        max-height: 30px !important;
+      }
+    
+      .description {
+        font-size: 1rem !important;
+      }
+    
+      div.temperature {
+        display: none !important;
+      }
+
+      .delete-icon {
+        max-width: 20px !important;
+        max-height: 20px ipo !important;
+      }
+    }
+  }
+}

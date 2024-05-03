@@ -9,10 +9,10 @@
     </button>
     <ul class="nav links-wrapper fs-4 w-50 justify-content-center">
       <li class="nav-item">
-        <a class="nav-link text-light active" aria-current="page" href="#">Forecast</a>
+       <%= link_to "Forecast", root_path, class: "nav-link text-light #{request.path == root_path ? 'active' : ''}" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">Weather Logs</a>
+        <%= link_to "Weather Logs", weathers_path, class: "nav-link text-light #{request.path.include?('/weather') ? 'active' : ''}" %>
       </li>
     </ul>
   </div>
@@ -21,10 +21,10 @@
   <div class="fs-6 p-4" style="border-radius: 0px;">
     <ul class="nav links-wrapper flex-column fs-5 justify-content-center">
       <li class="nav-item">
-        <a class="nav-link text-light active" aria-current="page" href="#">Forecast</a>
+        <%= link_to "Forecast", root_path, class: "nav-link text-light #{request.path == root_path ? 'active' : ''}" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="#">Weather Logs</a>
+        <%= link_to "Weather Logs", weathers_path, class: "nav-link text-light #{request.path.include?('/weather') ? 'active' : ''}" %>
       </li>
     </ul>
   </div>
