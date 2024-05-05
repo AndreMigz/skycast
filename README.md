@@ -23,3 +23,8 @@
 
   - Weather Logs
   ![Screenshot 2024-05-05 111058](https://github.com/AndreMigz/skycast/assets/118160061/07e279c1-2607-4ecd-b631-a1f4e67285a6)
+
+### Demo:
+
+https://github.com/AndreMigz/skycast/assets/118160061/24342100-8c68-43f0-b6fc-c6d4c7e67dea
+
